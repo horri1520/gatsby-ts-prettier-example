@@ -1,11 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import devices from '../../../types/devices';
 import Footer from '../../organisms/footer';
 import Header from '../../organisms/header';
 
 type Props = {
-  agent: devices;
   children: React.ReactChild;
 };
 
@@ -27,11 +25,11 @@ const ContentsWrapper = styled.div`
   padding-top: 80px;
 `;
 
-const PageRoot: React.FC<Props> = ({ children, agent }: Props) => {
+const PageRoot: React.FC<Props> = ({ children }: Props) => {
   return (
     <Root>
       <HeaderWrapper>
-        <Header agent={agent} />
+        <Header />
       </HeaderWrapper>
       <ContentsWrapper>{children}</ContentsWrapper>
       <Footer />

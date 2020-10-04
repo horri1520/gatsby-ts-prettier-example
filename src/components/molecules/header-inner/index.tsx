@@ -1,12 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import pages from '../../../constants/pages';
-import devices from '../../../types/devices';
 import HeaderLink from '../../atoms/header-link';
-
-type Props = {
-  agent: devices;
-};
 
 const HeaderContentsWrapper = styled.div`
   display: flex;
@@ -27,17 +22,15 @@ const HeaderLinks = styled.div`
   display: flex;
 `;
 
-const HeaderInner: React.FC<Props> = ({ agent }: Props) => {
+const HeaderInner: React.FC = () => {
   return (
     <HeaderContentsWrapper>
       <SiteLogo href="/">ほりぶろぐ</SiteLogo>
-      {agent === devices.pc ? (
-        <HeaderLinks>
-          {pages.map(page => (
-            <HeaderLink label={page.label} href={page.path} key={page.name} />
-          ))}
-        </HeaderLinks>
-      ) : null}
+      <HeaderLinks>
+        {pages.map(page => (
+          <HeaderLink label={page.label} href={page.path} key={page.name} />
+        ))}
+      </HeaderLinks>
     </HeaderContentsWrapper>
   );
 };
