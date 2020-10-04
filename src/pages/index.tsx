@@ -1,9 +1,27 @@
-import React from 'react';
-import IndexTemplate from '../components/templates/index-template';
+import React, { useState } from 'react';
+import PageRoot from '../components/templates/page-root';
 import '../styles/styles.css';
+import judgeAgent from '../tools/judge-agent';
+import onServerSideRendering from '../tools/judge-ssr';
+import devices from '../types/devices';
 
 const IndexPage: React.FC = () => {
-  return <IndexTemplate />;
+  const [agent, setAgent] = useState<devices>(judgeAgent());
+
+  if (!onServerSideRendering) {
+    window.onresize = () => {
+      const currentAgent = judgeAgent();
+      if (agent !== currentAgent) {
+        setAgent(currentAgent);
+      }
+    };
+  }
+
+  return (
+    <PageRoot agent={agent}>
+      <h1>IndexPage</h1>
+    </PageRoot>
+  );
 };
 
 export default IndexPage;

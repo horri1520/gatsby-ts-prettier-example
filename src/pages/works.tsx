@@ -5,7 +5,7 @@ import judgeAgent from '../tools/judge-agent';
 import onServerSideRendering from '../tools/judge-ssr';
 import devices from '../types/devices';
 
-const NotFoundPage: React.FC = () => {
+const WorksPage: React.FC = () => {
   const [agent, setAgent] = useState<devices>(judgeAgent());
 
   if (!onServerSideRendering) {
@@ -19,9 +19,9 @@ const NotFoundPage: React.FC = () => {
 
   return (
     <PageRoot agent={agent}>
-      <h1>404 not found.</h1>
+      <h1>WorksPage</h1>
     </PageRoot>
   );
 };
 
-export default NotFoundPage;
+export default WorksPage;
