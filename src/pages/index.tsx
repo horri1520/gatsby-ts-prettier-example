@@ -1,8 +1,13 @@
 import React from 'react';
-import '../styles/base-styles.css';
+import PageRoot from '../components/templates/page-root';
+import '../styles/styles.css';
 
 const IndexPage: React.FC = () => {
-  return <h1>IndexPage</h1>;
+  return (
+    <PageRoot>
+      <h1>IndexPage</h1>
+    </PageRoot>
+  );
 };
 
 export default IndexPage;

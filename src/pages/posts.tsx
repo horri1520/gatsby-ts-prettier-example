@@ -1,8 +1,13 @@
 import React from 'react';
-import '../styles/base-styles.css';
+import PageRoot from '../components/templates/page-root';
+import '../styles/styles.css';
 
 const PostsPage: React.FC = () => {
-  return <h1>PostsPage</h1>;
+  return (
+    <PageRoot>
+      <h1>PostsPage</h1>
+    </PageRoot>
+  );
 };
 
 export default PostsPage;

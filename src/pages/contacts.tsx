@@ -1,8 +1,13 @@
 import React from 'react';
-import '../styles/base-styles.css';
+import PageRoot from '../components/templates/page-root';
+import '../styles/styles.css';
 
 const ContactsPage: React.FC = () => {
-  return <h1>ContactsPage</h1>;
+  return (
+    <PageRoot>
+      <h1>ContactsPage</h1>
+    </PageRoot>
+  );
 };
 
 export default ContactsPage;
